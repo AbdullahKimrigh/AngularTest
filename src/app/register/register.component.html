@@ -1,0 +1,49 @@
+<div class="container">
+    <h2 class="card-header">Registration</h2>
+    <div class="card card-container">
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="form.name" required
+                    #name="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && name.errors }" />
+                <!-- <div class="invalid-feedback" *ngIf="name.errors && f.submitted">
+                    <div *ngIf="name.errors['required']">Name is required</div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="phone" class="form-control" name="phone" [(ngModel)]="form.phone" required phone
+                    #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.errors }" />
+                <!-- <div class="invalid-feedback" *ngIf="phone.errors && f.submitted">
+                    <div *ngIf="phone.errors['required']">Phone Number is required</div>
+                    <div *ngIf="phone.errors['phone']">
+                        Phone must be a valid phone number
+                    </div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+                    minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+                <!-- <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors['required']">Password is required</div>
+                    <div *ngIf="password.errors['minlength']">
+                        Password must be at least 6 characters
+                    </div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Sign Up</button>
+            </div>
+
+            <!-- <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                Signup failed!
+            </div> -->
+        </form>
+
+        <!-- <div class="alert alert-success" *ngIf="isSuccessful">
+            Your registration is successful!
+        </div> -->
+    </div>
+</div>

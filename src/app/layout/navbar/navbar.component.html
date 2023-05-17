@@ -1,0 +1,27 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+        <img src="/docs/4.2/assets/brand/bootstrap-solid.svg" width="50" height="50" alt="">
+        Athir Care
+    </a>
+
+    <button class="nav"  href="#">Profile</button>
+    <button class="nav" href="#">Log out</button>
+</nav> -->
+
+<nav>
+    <ul class="nav nav-tabs navbar-expand-md">
+        <a class="navbar-brand" href="#">
+            <img src="https://athir.care/assets/img/athircare-logo.png" width="200" height="50" alt="athircare-logo">
+        </a>
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse"
+            (click)="isCollapsed = !isCollapsed">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li><button class="nav-link"><a class="text-left" href="#">{{ nav1 }}</a></button></li>
+                <li><button class="nav-link"><a class="text-left" href="#">{{ nav2 }}</a></button></li>
+            </ul>
+        </div>
+    </ul>
+</nav>
